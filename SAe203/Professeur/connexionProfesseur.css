@@ -1,10 +1,40 @@
 html, body {
     height: 100%;
     margin: 0;
+    background-color: #F7F7ED;
 }
 
-body{
-    background-color: #F7F7ED;
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #1c2c54;
+    margin-top: -10px;
+    right: 0.1px;
+}
+img{
+    width: 5%;
+}
+
+.container{
+    width: 400px;
+    margin:0% auto;
+    margin-top: 10%;
+}
+.container p {
+    width:50%;
+    margin:0 auto;
+    padding-bottom: 10px
+    ;
+}
+
+form{
+    width:25%;
+    padding:30px ;
+    border-radius: 25px;
+    background-color: #64748c;
+    box-shadow:10px 10px 40px black; 
+    margin: auto;
+    margin-top: 5%;
 }
 
 p {
@@ -18,7 +48,6 @@ h3{
     text-align: center;
     color: rgb(50, 50, 50);
 }
-
 .retour{
     margin-right:50px ;
     border: 0;
@@ -30,35 +59,6 @@ h3{
     border-radius: 10px;
     background-color: red;
     text-decoration: none;
-}
-
-.navbar {
-    width: 200%;
-    height: 60px;
-    background-color: #1c2c54;
-    margin-top: 0%;
-
-}
-
-form{
-    width:25%;
-    padding:30px ;
-    border-radius: 25px;
-    background-color: #64748c;
-    box-shadow:10px 10px 40px black; 
-    margin: auto;
-    margin-top: 5%;
-}
-.container{
-    width: 400px;
-    margin:0% auto;
-    margin-top: 10%;
-}
-.container p {
-    width:50%;
-    margin:0 auto;
-    padding-bottom: 10px
-    ;
 }
 input[type=text]{
     width: 100%;
