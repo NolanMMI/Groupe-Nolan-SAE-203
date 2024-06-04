@@ -32,6 +32,9 @@ body {
     margin: 0 0 20px 0;
     text-align: center;
 }
+p{
+    font-weight: bolder;
+}
 .module {
     background-color: #374A62;
     padding: 20px;
@@ -39,7 +42,7 @@ body {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+
 }
 .module img {
     height: 50px;
@@ -48,4 +51,14 @@ body {
 }
 .module .title {
     flex-grow: 1;
+}
+.module a {
+    float: left;
+    text-decoration: none;
+    color: white;
+    background-color: #FFA500;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }

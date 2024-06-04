@@ -40,14 +40,15 @@ form{
 
 p {
     font-size: 15px;
+    color: white;
 }
 h1{
     text-align: center;
-    color: rgb(6, 0, 0);
+    color: white;
 }
 h3{
     text-align: center;
-    color: rgb(50, 50, 50);
+    color: white;
 }
 
 input[type=text]{
@@ -87,6 +88,6 @@ input[type=submit]{
     text-align: center;
     color: #fff;
     border-radius: 10px;
-    background-color: red;
+    background-color: #BCC4CC;
     text-decoration: none;
 }

@@ -10,11 +10,11 @@
 <body>
 <nav class="navbar">
          <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
-    </nav>
-        <div class="Tableaudebord">
+            <div class="Tableaudebord">
             <a href="Dashboard.php">Tableau de bord</a>
-
         </div>
+    </nav>
+
     </div>
     <div class="container">
         <div class="Truc">
@@ -23,9 +23,14 @@
                     Bonjour,<br>Vue d'ensemble.
                 </p>
             </div>
-        </div>
-        <div class="Boutons">
-            <button id="Ajout">Ajouter</button>    
+
+        </div>     
+        <div class="links">  
+        <a href="#">Module</a>
+        <a href="adminprofesseur.php">Professeur</a>
+        <a href="AdminEtudiant.php">Étudiant</a>
+        </div> 
+        <div class="Boutons">   
                 <div class="header">
                 <select name="select" id="tpSelect" onchange="showTable()">
                     <option value="TPA">TP A</option>
@@ -33,56 +38,64 @@
                     <option value="TPC">TP C</option>
                 </select>
             </div>
+            <button id="Modifier" >Modifier</button>
+            <button id="Ajout">Ajouter</button>   
         </div>
 
             <div id="TPA" class="table-container">
                 <h2>TP A</h2>
                 <table>
+            <col style="width: 50%;">
+            <col style="width: 50%;">
                         <tr>
-                            <th>EDDABACHI</th>
-                            <th>YOUNESS <button></button></th>
+                            <td>EDDABACHI</td>
+                            <td>YOUNESS <button id="supp">Supprimer</button></td>
                         </tr>
                         <tr>
-                            <th>EDDABACHI</th>
-                            <th>YOUNESS</th>
-                        </tr>
-
-                        <tr>
-                            <th>EDDABACHI</th>
-                            <th>YOUNESS</th>
+                            <td>EDDABACHI</td>
+                            <td>YOUNESS<button id="supp">Supprimer</button></td>
                         </tr>
 
                         <tr>
-                            <th>EDDABACHI</th>
-                            <th>YOUNESS</th>
+                            <td>EDDABACHI</td>
+                            <td>YOUNESS<button id="supp">Supprimer</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>EDDABACHI</td>
+                            <td>YOUNESS<button id="supp">Supprimer</button></td>
                         </tr>
                 </table>
             </div>
             <div id="TPB" class="table-container" style="display: none;">
                 <h2>TP B</h2>
                 <table>
+                <col style="width: 50%;">
+                <col style="width: 50%;">
                         <tr>
-                            <th>veo</th>
-                            <th>nolan</th>
+                            <td>veo</td>
+                            <td>nolan<button id="supp">Supprimer</button></td>
                         </tr>
                 </table>
             </div>
             <div id="TPC" class="table-container" style="display: none;">
                 <h2>TP C</h2>
                 <table>
+                <col style="width: 50%;">
+            <col style="width: 50%;">
                         <tr>
-                            <th>kouassi</th>
-                            <th> emmanuel</th>
+                            <td>kouassi</td>
+                            <td> emmanuel<button id="supp">Supprimer</button></td>
                         </tr>
                 </table>
             </div>
     </div>
 
-    <!-- CA c'est le fomulaire pour ajouter une personne -->
+
     <div id="Etudiantnote" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Ajouter/Modifier Étudiant</h2>
+            <h2>Ajouter Étudiant</h2>
             <form id="studentForm">
                 <label for="nom">Nom:</label>
                 <input type="text" id="nom" name="nom" required>

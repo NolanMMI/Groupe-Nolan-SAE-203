@@ -17,15 +17,15 @@
             <h1>Dashboard Admin</h1>
             <p>Vue d'ensemble</p>
             <div class="module">
-                 <a href="#"><img src="img/" alt="Module"></a> 
-                 <a href="#"><div class="title">Module</div></a>
+                <img src="img/" alt="Module">
+                 <a href="Adminmodule.php"><div class="title">Module</div></a>
             </div>
             <div class="module">
-                <a herf="#"> <img src="img/prof1.png" alt="Professeur"></a>
-                <a href="#"><div class="title">Professeurs</div></a>
+              <img src="img/prof1.png" alt="Professeur">
+                <a href="Adminprofesseur.php"><div class="title">Professeurs</div></a>
             </div>
             <div class="module">
-                <a herf="AdminEtudiant.php"><img src="img/etudiant.png" alt="Etudiant"></a>
+                <img src="img/etudiant.png" alt="Etudiant">
                 <a href="AdminEtudiant.php"><div class="title">Etudiant</div></a>
             </div>
         </div>
