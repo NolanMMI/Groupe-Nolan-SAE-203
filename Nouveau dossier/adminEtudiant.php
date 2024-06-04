@@ -1,52 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Note</title>
-    <link rel="stylesheet" href="ProfesseurAjout.css">
+    <title>Admin etudiant</title>
+    <link rel="stylesheet" href="AdminEtudiant.css">
     <script src="TD.js"></script>
 </head>
 <body>
 <nav class="navbar">
          <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
     </nav>
+        <div class="Tableaudebord">
+            <a href="Dashboard.php">Tableau de bord</a>
+
+        </div>
     </div>
     <div class="container">
-        <div class="left-panel">
-            <h2>INFORMATIQUE :</h2>
-            <form>
-                <label>Nom d'evaluation :</label>
-                <input type="text" placeholder="Nom evaluation">
-                <label>Date d'evaluation :</label>
-                <input type="date" placeholder="Date evaluation">
-                <label>Note :</label>
-                <input type="text" placeholder="Note">
-                <label>Coefficient :</label>
-                <input type="text" placeholder="Coeff">
-                <label>Pénalité :</label>
-                <input type="text" placeholder="Pénalité">
-                <div class="buttons">
-                    <button type="submit">Valider</button>
-                    <button type="reset">Effacer</button>
-                </div>
-            </form>
+        <div class="Truc">
+            <div class="Truc1">
+                <p>
+                    Bonjour,<br>Vue d'ensemble.
+                </p>
+            </div>
         </div>
-        <div class="right-panel-bg"></div>
-        <div class="right-panel">
-            <div class="header">
+        <div class="Boutons">
+            <button id="Ajout">Ajouter</button>    
+                <div class="header">
                 <select name="select" id="tpSelect" onchange="showTable()">
                     <option value="TPA">TP A</option>
                     <option value="TPB">TP B</option>
                     <option value="TPC">TP C</option>
                 </select>
             </div>
+        </div>
+
             <div id="TPA" class="table-container">
                 <h2>TP A</h2>
                 <table>
                         <tr>
                             <th>EDDABACHI</th>
-                            <th>YOUNESS</th>
+                            <th>YOUNESS <button></button></th>
                         </tr>
                         <tr>
                             <th>EDDABACHI</th>
@@ -82,8 +76,27 @@
                         </tr>
                 </table>
             </div>
-        </div>
-
     </div>
+
+    <!-- CA c'est le fomulaire pour ajouter une personne -->
+    <div id="Etudiantnote" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ajouter/Modifier Étudiant</h2>
+            <form id="studentForm">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="nom" required>
+                <label for="prenom">Prénom:</label>
+                <input type="text" id="prenom" name="prenom" required>
+                <label for="note">Note:</label>
+                <input type="text" id="note" name="note" required>
+                <label for="coef">Coef:</label>
+                <input type="text" id="coef" name="coef" required>
+                <button type="submit">Enregistrer</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="Ajout.js"></script>
 </body>
 </html>

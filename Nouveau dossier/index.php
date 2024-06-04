@@ -8,20 +8,20 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="#"><img src="img/Fastnote.png"></a>
+        <a href=""><img src="img/Fastnote.png"></a>
     </nav>
 
     <div class="container">
         <form class="formulaire" id="form1">
-            <img src="#" alt="Image 1">
+            <img src="img/prof1.png" alt="Image 1">
             <button type="submit"><a href="connexionProfesseurs.php">Professeur</a></button>
         </form>
         <form class="formulaire" id="form2">
-            <img src="" alt="Image 2">
+            <img src="img/admin1.png" alt="Image 2" >
             <button type="submit"><a href="connexionAdmin.php">Admin</a></button>
         </form>
         <form class="formulaire" id="form3">
-            <img src="" alt="Image 3">
+            <img src="img/etudiant.png" alt="Image 3">
             <button type="submit"><a href="connexionEtudiant.php">Etudiant</a></button>
         </form>
     </div>

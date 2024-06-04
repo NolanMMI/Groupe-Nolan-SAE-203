@@ -22,7 +22,7 @@ body, html {
     margin-top: 200px;
 }
 img{
-    width: 6%;
+    width: 5%;
 }
 
 .formulaire {
@@ -40,13 +40,21 @@ img{
 #form1 {
     background-color: #64748c;
 }
+#form1 img{
+    width: 55%;
+}
 #form2 {
     background-color: #bcc4cc;
+}
+#form2 img{
+    width: 55%;
 }
 #form3{
     background-color: #1c2c54;
 }
-
+#form3 img{
+    width: 55%;
+}
 button {
     padding: 10px 20px;
     border: none;

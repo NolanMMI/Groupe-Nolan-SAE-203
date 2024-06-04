@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="Professeurmodule.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="#" alt="Logo" class="logo-img">
-        </div>
+<nav class="navbar">
+         <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
+    </nav>
        
     </div>
     <div class="container">

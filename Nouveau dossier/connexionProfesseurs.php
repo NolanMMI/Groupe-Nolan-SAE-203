@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="navbar">
-         <a href="Fastnote.html"><img src="img/Fastnote.png" style="width: 3%;"></a>
+         <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
     </nav>
    
     <div id="container">

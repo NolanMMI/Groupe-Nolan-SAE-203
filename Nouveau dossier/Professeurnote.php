@@ -7,10 +7,9 @@
     <link rel="stylesheet" href="Professeurnote.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src="#" alt="Logo" class="logo-img">
-        </div>
+<nav class="navbar">
+         <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
+    </nav>
         <div class="Tableaudebord">
             <a href="Professeurmodule.html">Tableau de bord</a>
 

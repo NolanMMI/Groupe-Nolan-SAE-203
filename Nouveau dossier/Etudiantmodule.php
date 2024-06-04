@@ -7,12 +7,9 @@
     <link rel="stylesheet" href="Etudiantmodule.css">
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <img src=C:\Users\yedda\Downloads\Groupe-Nolan-SAE-203-main\Groupe-Nolan-SAE-203-main\SAe203\Etudian alt="Logo" class="logo-img">
-        </div>
-       
-    </div>
+<nav class="navbar">
+         <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
+    </nav>
     <div class="container">
         <div class="Bienvenue">
             <input type="text" class="Recherche" placeholder="Rechercher">  

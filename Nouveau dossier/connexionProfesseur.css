@@ -49,18 +49,7 @@ h3{
     text-align: center;
     color: rgb(50, 50, 50);
 }
-.retour{
-    margin-right:50px ;
-    border: 0;
-    line-height: 2.5;
-    padding: 0 10px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    border-radius: 10px;
-    background-color: red;
-    text-decoration: none;
-}
+
 input[type=text]{
     width: 100%;
     padding:12px 20px;
@@ -88,4 +77,16 @@ input[type=submit]{
     border-radius: 50px;
     cursor:pointer;
     width: 100%;
+}
+.retour{
+    margin-right:50px ;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 10px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    background-color: red;
+    text-decoration: none;
 }
