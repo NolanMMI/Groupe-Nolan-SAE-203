@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="error-container">
+        <h1>Erreur</h1>
+        <p class="error-message">Votre login ou mot de passe est incorrect .</p>
+        <a href="index.php" class="back-button">Retour </a>
+    </div>
+</body>
+</html>
+<style>
+    /* Styles généraux pour le corps */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:  #F7F7ED ;
+;
+    font-family: Arial, sans-serif;
+}
+
+/* Conteneur de la page d'erreur */
+.error-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Titre de la page d'erreur */
+.error-container h1 {
+    font-size: 48px;
+    color: #ff6b6b;
+    margin: 0;
+}
+
+/* Message d'erreur */
+.error-message {
+    font-size: 18px;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Bouton de retour */
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1c2c54;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Changement de couleur du bouton de retour au survol */
+.back-button:hover {
+    background-color: #1c2c54;
+}
+
+</style>

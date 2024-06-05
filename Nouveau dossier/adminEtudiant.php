@@ -36,6 +36,9 @@
                     <option value="TPA">TP A</option>
                     <option value="TPB">TP B</option>
                     <option value="TPC">TP C</option>
+                    <option value="TPD">TP D</option>
+                    <option value="TPE">TP E</option>
+                    <option value="TPF">TP F</option>
                 </select>
             </div>
             <button id="Modifier" >Modifier</button>
@@ -80,6 +83,42 @@
             </div>
             <div id="TPC" class="table-container" style="display: none;">
                 <h2>TP C</h2>
+                <table>
+                <col style="width: 50%;">
+            <col style="width: 50%;">
+                        <tr>
+                            <td>kouassi</td>
+                            <td> emmanuel<button id="supp">Supprimer</button></td>
+                        </tr>
+                </table>
+            </div>
+
+            <div id="TPD" class="table-container" style="display: none;">
+                <h2>TP D</h2>
+                <table>
+                <col style="width: 50%;">
+            <col style="width: 50%;">
+                        <tr>
+                            <td>kouassi</td>
+                            <td> emmanuel<button id="supp">Supprimer</button></td>
+                        </tr>
+                </table>
+            </div>
+
+            <div id="TPE" class="table-container" style="display: none;">
+                <h2>TP E</h2>
+                <table>
+                <col style="width: 50%;">
+            <col style="width: 50%;">
+                        <tr>
+                            <td>kouassi</td>
+                            <td> emmanuel<button id="supp">Supprimer</button></td>
+                        </tr>
+                </table>
+            </div>
+
+            <div id="TPF" class="table-container" style="display: none;">
+                <h2>TP F</h2>
                 <table>
                 <col style="width: 50%;">
             <col style="width: 50%;">

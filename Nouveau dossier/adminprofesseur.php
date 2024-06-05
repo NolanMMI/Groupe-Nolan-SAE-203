@@ -41,12 +41,12 @@
             <col style="width: 50%;">
             <col style="width: 50%;">
                         <tr>
-                            <td>Boucetta</td>
-                            <td>Cherifa <button id="supp">Supprimer</button></td>
+                            <td>Dupont</td>
+                            <td>Jean <button id="supp">Supprimer</button></td>
                         </tr>
                         <tr>
-                            <td>GUYANNE</td>
-                            <td>Chan-nam<button type="submit" id="supp">Supprimer</button></td>
+                            <td>Martin	</td>
+                            <td>Sophie<button type="submit" id="supp">Supprimer</button></td>
                         </tr>
 
                         <tr>
