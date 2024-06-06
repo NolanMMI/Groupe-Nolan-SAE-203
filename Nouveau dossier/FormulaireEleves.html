@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajouter Élève</title>
+    <link rel="stylesheet" href="FormulaireEleves.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo"></div>
+        <div class="menu">
+            <a href="#">Tableau de bord</a>
+            <a href="#">Déconnexion</a>
+        </div>
+    </div>
+    <div class="container">
+        <div class="form-container">
+            <form id="eleve-form">
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                <div class="form-group">
+                    <label for="login">Login</label>
+                    <input type="text" id="login" name="login" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="numero-id">Numéro ID</label>
+                    <input type="text" id="numero-id" name="numero-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="annee">Années scolaire</label>
+                    <input type="" id="annee" name="annee" required>
+                </div>
+                <div class="form-group">
+                    <label for="classe">Classe</label>
+                    <select id="classe" name="classe" required>
+                        <option value="">Sélectionnez une classe</option>
+                        <option value="TPA">TPA</option>
+                        <option value="TPB">TPB</option>
+                        <option value="TPC">TPC</option>
+                        <option value="TPD">TPD</option>
+                        <option value="TPE">TPE</option>
+                        <option value="TPF">TPF</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button type="submit">Créer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="FormulaireEleves.js"></script>
+</body>
+</html>

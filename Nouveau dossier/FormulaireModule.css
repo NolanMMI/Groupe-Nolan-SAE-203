@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E5E7EB;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E3A8A;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-image: url('logo.png'); /* Ajoutez votre logo ici */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+#Arriere {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+nav {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    margin-bottom: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.form-Module {
+    background-color: #1E3A8A;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    width: 600px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    width: 120px;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button[type="submit"], button[type="button"] {
+    background-color: #374151;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-group button {
+    margin-left: 10px;
+}
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E3A8A;
+    width: 30%;
+    padding: 5px 500px;
+    color: white;
+}

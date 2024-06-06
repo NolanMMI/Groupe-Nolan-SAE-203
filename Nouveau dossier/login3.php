@@ -11,7 +11,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("La connexion a échoué: " . $conn->connect_error);
 }
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $login = $_POST['login'];
     $password = $_POST['password'];
@@ -24,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: Dashboard.php");
         exit;
     }else{
-        header("location: connexionAdmin.php");
+        echo("identifiant incorrect");
     }
 
 
@@ -37,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: professeurmodule.php");
         exit;
     } else{
-        header("location: connexionprofesseurs.php");
+           
       
     }
 
@@ -49,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header("location: etudiantmodule.php");
         exit;
     }else{
-        header("location: connexionEtudiant.php");
+   
       
     }
 

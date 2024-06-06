@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E5E7EB;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1E3A8A;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-image: url('logo.png'); /* Ajoutez votre logo ici */
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.menu a {
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.Luffy {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+nav {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+nav a {
+    margin-bottom: 10px;
+    color: black;
+    text-decoration: none;
+}
+
+.form-container {
+    background-color: #1E3A8A;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    width: 600px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    width: 120px;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-group button {
+    background-color: #374151;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #374151;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button-group button {
+    margin-left: 10px;
+}
+
+.Module{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+.Module label{
+    width: 120px;
+}
+
+
+.Module input{
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.Module button{
+    background-color: #374151;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+
+.Matiere{
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+
+.Matiere label{
+    width: 120px;
+}
+
+
+.Matiere input{
+    flex: 1;
+    padding: 5px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.Matiere button{
+    background-color: #374151;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+

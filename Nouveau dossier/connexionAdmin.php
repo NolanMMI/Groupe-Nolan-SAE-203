@@ -13,12 +13,12 @@
     </nav>
    
     <div id="container">
-    
         <form action="login3.php" method="POST">
 
         <h1>Admin</h1>
         <h3> Entrez votre identifiant et votre mot de passe.</h3>  
         <p><strong>Identifiant</strong></p>
+
         <input type="text"  name="login" placeholder="Identifiant" required >
         <p><strong>Mot de passe</strong></p>
         <input type="password"  name="password" placeholder="Mot de passe" required>
@@ -27,10 +27,6 @@
          <input type="submit" name="connexion" value="connexion">  
         <a class="retour" href="index.php">Retour</a>
     </form>     
-       <?php
-    if (isset($error)) {
-        echo "<p class='error-message'>$error</p>";
-    }
-    ?>
+
 </body>
 </html>
