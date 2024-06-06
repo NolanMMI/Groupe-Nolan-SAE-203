@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="navbar">
-         <a href="Fastnote.html"><img src="img/Fastnote.PNG"></a>
+         <a href="index.php"><img src="img/Fastnote.PNG"></a>
     </nav>
    
     <div id="container">

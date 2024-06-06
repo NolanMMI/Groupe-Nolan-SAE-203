@@ -14,7 +14,15 @@
     </div>
     <div class="container">
         <div class="left-panel">
-            <h2>INFORMATIQUE :</h2>
+            <h2>INFORMATIQUE :</h2> 
+            <div class="header">
+                <select name="select" id="tpSelect" onchange="showTable()">
+                    <option value="TPA">TP A</option>
+                    <option value="TPB">TP B</option>
+                    <option value="TPC">TP C</option>
+                </select>
+            </div>
+            <br>
             <form>
                 <label>Nom d'evaluation :</label>
                 <input type="text" placeholder="Nom evaluation">
@@ -34,13 +42,7 @@
         </div>
         <div class="right-panel-bg"></div>
         <div class="right-panel">
-            <div class="header">
-                <select name="select" id="tpSelect" onchange="showTable()">
-                    <option value="TPA">TP A</option>
-                    <option value="TPB">TP B</option>
-                    <option value="TPC">TP C</option>
-                </select>
-            </div>
+           
             <div id="TPA" class="table-container">
                 <h2>TP A</h2>
                 <table>

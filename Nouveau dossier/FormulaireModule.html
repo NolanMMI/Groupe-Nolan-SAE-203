@@ -7,22 +7,22 @@
     <link rel="stylesheet" href="FormulaireModule.css">
 </head>
 <body>
-    <nav>
+    <div class="header">
         <div class="logo"></div>
         <div class="menu">
             <a href="#">Tableau de bord</a>
             <a href="#">Déconnexion</a>
         </div>
-    </nav>
-    <div id="Arriere">
-
-        <div class="form-Module">
-            <form id="module">
+    </div>
+    <div class="container">
+        
+        <div class="form-container">
+            <form id="module-form">
                 <div class="form-group">
                     <label for="nom-module">Nom</label>
                     <input type="text" id="nom-module" name="nom-module" required>
                 </div>
-                <div id="matiere">
+                <div id="matiere-container">
                     <div class="form-group">
                         <label for="matiere-0">Matière</label>
                         <input type="text" id="matiere-0" name="matiere" required>
@@ -35,6 +35,6 @@
             </form>
         </div>
     </div>
-    <script src="Formulaire.js"></script>
+    <script src="FormulaireModule.js"></script>
 </body>
 </html>

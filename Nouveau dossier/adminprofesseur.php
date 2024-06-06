@@ -12,6 +12,7 @@
          <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
             <div class="Tableaudebord">
             <a href="Dashboard.php">Tableau de bord</a>
+            <a href="deconnexion.php">Deconnexion</a>
         </div>
     </nav>
 

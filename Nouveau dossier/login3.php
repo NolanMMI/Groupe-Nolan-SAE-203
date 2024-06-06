@@ -4,56 +4,44 @@ $username = "root";
 $password = "";  
 $dbname = "fastnote";
 
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $login = $_POST['login'];
+        $password = $_POST['password'];
 
+        $stmt = $conn->prepare("SELECT * FROM admin WHERE login_admin = :login AND motdepasse_admin = :password");
+        $stmt->execute(['login' => $login, 'password' => $password]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
+            header("Location: Dashboard.php");
+            exit;
+        } else {
+            echo "<script type='text/javascript'>
+            alert('Identifiants incorrects');
+            window.location.href='connexionAdmin.php'; 
+            </script>"; 
+        }
 
-if ($conn->connect_error) {
-    die("La connexion a échoué: " . $conn->connect_error);
+        $stmt = $conn->prepare("SELECT * FROM prof WHERE login_prof = :login AND motdepasse_prof = :password");
+        $stmt->execute(['login' => $login, 'password' => $password]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
+            header("Location: professeurmodule.php");
+            exit;
+        }
+
+        $stmt = $conn->prepare("SELECT * FROM eleves WHERE login_eleve = :login AND motdepasse_eleve = :password");
+        $stmt->execute(['login' => $login, 'password' => $password]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        if ($result) {
+            header("Location: etudiantmodule.php");
+            exit;
+        }
+    }
+} catch (PDOException $e) {
+    die("La connexion a échoué: " . $e->getMessage());
 }
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $login = $_POST['login'];
-    $password = $_POST['password'];
-
-    $stmt = $conn->prepare("SELECT * FROM admin WHERE login_admin = ? AND motdepasse_admin = ?");
-    $stmt->bind_param("ss", $login, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    if ($result->num_rows > 0) {
-        header("location: Dashboard.php");
-        exit;
-    }else{
-        echo("identifiant incorrect");
-    }
-
-
-  
-    $stmt = $conn->prepare("SELECT * FROM prof WHERE login_prof = ? AND motdepasse_prof = ?");
-    $stmt->bind_param("ss", $login, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    if ($result->num_rows > 0) {
-        header("location: professeurmodule.php");
-        exit;
-    } else{
-           
-      
-    }
-
-    $stmt = $conn->prepare("SELECT * FROM eleves WHERE login_eleve = ? AND motdepasse_eleve = ?");
-    $stmt->bind_param("ss", $login, $password);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    if ($result->num_rows > 0) {
-        header("location: etudiantmodule.php");
-        exit;
-    }else{
-   
-      
-    }
-
-    $stmt->close();
-}
-
-$conn->close();
 ?>

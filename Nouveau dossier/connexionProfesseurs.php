@@ -8,7 +8,7 @@
 </head>
 <body>
     <nav class="navbar">
-         <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
+         <a href="index.php"><img src="img/Fastnote.png"></a>
     </nav>
    
     <div id="container">

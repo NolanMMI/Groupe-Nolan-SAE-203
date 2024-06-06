@@ -12,7 +12,7 @@
     </nav>
         <div class="Tableaudebord">
             <a href="Professeurmodule.html">Tableau de bord</a>
-
+            <a href="deconnexion.php">Deconnexion</a>
         </div>
     </div>
     <div class="container">

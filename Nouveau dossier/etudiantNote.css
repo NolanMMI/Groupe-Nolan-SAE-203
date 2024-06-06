@@ -90,3 +90,7 @@ button {
 button:hover {
     background-color: #c0c0c0;
 }
+
+a {
+    text-decoration: none;
+}

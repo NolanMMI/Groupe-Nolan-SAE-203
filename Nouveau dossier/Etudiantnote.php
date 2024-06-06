@@ -14,7 +14,7 @@
             </div>
             <nav>
                 <a href="#">Tableau de bord</a>
-                <a href="#">Déconnexion</a>
+                <a href="deconnexion.php">Déconnexion</a>
             </nav>
         </header>
         <main>
@@ -89,7 +89,7 @@
                                 <td>6/20</td>
                             </tr>
                         </table>
-                       <a href="Etudiant.php"> <button>Voir plus</button></a>
+                       <a href="Etudiant.php"><button>Voir plus</button></a>
                     </div>
                 </div>
             </div>
