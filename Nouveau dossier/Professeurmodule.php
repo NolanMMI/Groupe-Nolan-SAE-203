@@ -9,6 +9,7 @@
 <body>
 <nav class="navbar">
          <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
+         <a href="deconnexion.php">Deconnexion</a>
        
     </nav>
        

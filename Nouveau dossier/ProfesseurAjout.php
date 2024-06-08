@@ -8,9 +8,13 @@
     <script src="TD.js"></script>
 </head>
 <body>
-<nav class="navbar">
-         <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
-    </nav>
+<div class="header">
+        <div class="logo">
+            <a href="index.php"><img src="img/fastnote.png"></a>
+        </div>
+        <div class="Tableaudebord">
+            <a href="deconnexion.php">deconnexion</a>
+       </div>
     </div>
     <div class="container">
         <div class="left-panel">

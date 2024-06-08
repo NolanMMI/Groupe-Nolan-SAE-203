@@ -1,3 +1,28 @@
+<?php
+session_start();
+include 'login3.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $pdo = connexionDB();
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare('SELECT * FROM eleves WHERE login_eleve = :login AND motdepasse_eleve= :password');
+    $stmt->bindParam(':login', $login);
+    $stmt->bindParam(':password', $password); 
+    $stmt->execute();
+    $Etudiant = $stmt->fetch();
+
+    if ($Etudiant) {
+        $_SESSION['login_eleve'] = $Etudiant['id_eleve'];
+        header('Location: EtudiantNote.php');
+        exit;
+    } else {
+        $error = "Nom d'utilisateur ou mot de passe incorrect";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +41,9 @@
         <form action="" method="POST">
         <h1>Etudiant</h1>
         <h3> Entrez votre identifiant et votre mot de passe.</h3>  
+        <?php if (!empty($error)): ?>
+            <div class="ALERT alert-danger" style="color:#e0172b;"><?= htmlspecialchars($error) ?></div>
+        <?php endif; ?>
         <p><strong>Identifiant</strong></p>
         <input type="text" name="login" placeholder="Identifiant" required >
         <p><strong>Mot de passe</strong></p>

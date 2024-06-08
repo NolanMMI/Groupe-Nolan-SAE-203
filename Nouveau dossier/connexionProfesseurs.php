@@ -1,3 +1,27 @@
+<?php
+session_start();
+include 'login3.php';
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $pdo = connexionDB();
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare('SELECT * FROM prof WHERE login_prof = :login AND motdepasse_prof= :password');
+    $stmt->bindParam(':login', $login);
+    $stmt->bindParam(':password', $password); 
+    $stmt->execute();
+    $prof = $stmt->fetch();
+
+    if ($prof) {
+        $_SESSION['login_prof'] = $prof['id_prof'];
+        header('Location: professeurmodule.php');
+        exit;
+    } else {
+        $error = "Nom d'utilisateur ou mot de passe incorrect";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +37,12 @@
    
     <div id="container">
     
-        <form action="login3.php" method="POST">
+        <form action="" method="POST">
         <h1>Professeur</h1>
         <h3> Entrez votre identifiant et votre mot de passe.</h3>  
+        <?php if (!empty($error)): ?>
+            <div class="ALERT alert-danger" style="color:#e0172b;"><?= htmlspecialchars($error) ?></div>
+        <?php endif; ?>
         <p><strong>Identifiant</strong></p>
         <input type="text" id ="login"name="login" placeholder="Identifiant" required >
         <p><strong>Mot de passe</strong></p>
@@ -25,10 +52,6 @@
         <input type="submit" name="connexion" value="connexion" >  
         <a class="retour" href="index.php">Retour</a>
     </form>
-    <?php
-    if (isset($error)) {
-        echo "<p class='error-message'>$error</p>";
-    }
-    ?>
+
 </body>
 </html>

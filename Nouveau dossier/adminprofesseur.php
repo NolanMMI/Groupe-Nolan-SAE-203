@@ -32,7 +32,7 @@
         <a href="AdminEtudiant.php">Étudiant</a>
         </div> 
         <div class="Boutons">             
-            <button id="Ajout">Ajouter</button>     
+            <button id="Ajout"onclick="location.href='formulaireProf.php';">Ajouter</button>     
             <button id="Modifier" >Modifier</button>
 
         </div>

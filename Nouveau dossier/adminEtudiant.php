@@ -43,7 +43,7 @@
                 </select>
             </div>
             <button id="Modifier" >Modifier</button>
-            <button id="Ajout">Ajouter</button>   
+            <button id="Ajout"onclick="location.href='formulaireEleves.php';">Ajouter</button>   
         </div>
 
             <div id="TPA" class="table-container">
