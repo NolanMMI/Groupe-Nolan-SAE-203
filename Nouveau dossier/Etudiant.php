@@ -12,7 +12,7 @@
             <a href="index.php"><img src="img/fastnote.png"></a>
         </div>
         <div class="Tableaudebord">
-            <a href="Professeurmodule.php">Tableau de bord</a>
+            <a href="#">Tableau de bord</a>
             <a href="deconnexion.php">deconnexion</a>
        </div>
     </div>

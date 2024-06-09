@@ -1,5 +1,5 @@
 <?php
-include 'login3.php';
+include 'Nouveau%20dossier/login3.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo = connexionDB();
     $requete = 'INSERT INTO ressources (id_mod, nom_mod, id_prof) VALUES (:id_mod, :nom_mod, :id_prof)'; 
@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     try {
         $stmt->execute();
-        header('Location: adminmodule.php');
+        header('Location: Admin/adminmodule.php');
         exit;
     } catch (PDOException $e) {
         echo 'Erreur d\'insertion : ' . $e->getMessage();
