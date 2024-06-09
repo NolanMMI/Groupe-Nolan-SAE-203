@@ -5,17 +5,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $requete = 'INSERT INTO prof (id_prof, nom_prof, prenom_prof, login_prof, motdepasse_prof) VALUES (:id_prof, :nom_prof, :prenom_prof, :login_prof, :motdepasse_prof)'; 
     $stmt = $pdo->prepare($requete);
     
-    // Lier les paramètres
+
     $stmt->bindParam(':id_prof', $_POST['id_prof']);
     $stmt->bindParam(':nom_prof', $_POST['nom_prof']);
     $stmt->bindParam(':prenom_prof', $_POST['prenom_prof']);
     $stmt->bindParam(':login_prof', $_POST['login_prof']);
     $stmt->bindParam(':motdepasse_prof', $_POST['motdepasse_prof']);
     
-// Après l'exécution de l'insertion
+
 try {
     $stmt->execute();
-    // Rediriger vers la liste des candidats
+   
     header('Location: adminprofesseur.php');
     exit;
 } catch (PDOException $e) {
@@ -25,8 +25,8 @@ try {
 ?>
 <?php
 $pdo = connexionDB();
-$stmt = $pdo->query('SELECT * FROM prof'); //requete
-$candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associatif
+$stmt = $pdo->query('SELECT * FROM prof'); 
+$candidats = $stmt->fetchAll(); 
 ?>
 
 
@@ -61,13 +61,13 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
 
         </div>     
         <div class="links">  
-        <a href="adminmodule.php">Module</a>
+        <a href="adminmodule.php">Ressources</a>
         <a href="adminprofesseur.php">Professeur</a>
         <a href="AdminEtudiant.php">Étudiant</a>
         </div> 
         <div class="Boutons">             
             <button id="Ajout">Ajouter</button>     
-            <button id="Modifier" >Modifier</button>
+       
         </div>
         
                 <h2>Professeur MMI</h2>
@@ -79,6 +79,7 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
     <th>prenom</th>
     <th>login</th>
     <th>mot de passe</th>
+    <th>Actions</th>
 </tr>
                         <tr>
                         <?php foreach ($candidats as $candidat): ?>
@@ -88,7 +89,8 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
                 <td><?= htmlspecialchars($candidat['prenom_prof']) ?></td>
                 <td><?= htmlspecialchars($candidat['login_prof']) ?></td>
                 <td><?= htmlspecialchars($candidat['motdepasse_prof']) ?></td>
-                <td><button id="supp">Supprimer</button></td>
+                <td> <a class="modifier-link" href="modifier_professeur.php?id=<?= $candidat['id_prof'] ?>">Modifier</a>
+                <a  href="supprimer_professeur.php?id=<?= $candidat['id_prof'] ?>" id="supp" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce candidat ?');">Supprimer</a></td>
                         </tr>
                         <?php endforeach; ?>
 
@@ -120,6 +122,7 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
         </div>
         <div class="button-group">
             <button type="submit">Créer</button>
+            <button onclick="location.href='adminprofesseur.php';">Annuler</button>
         </div>
     </form>
 </div>

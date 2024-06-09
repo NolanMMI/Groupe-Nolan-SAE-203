@@ -17,8 +17,8 @@
             <h1>Dashboard Admin</h1>
             <p>Vue d'ensemble</p>
             <div class="module">
-                <img src="img/" alt="Module">
-                 <a href="adminmodule.php"><div class="title">Module</div></a>
+                <img src="img/ressources2.png" alt="Module">
+                 <a href="adminmodule.php"><div class="title">Ressources</div></a>
             </div>
             <div class="module">
               <img src="img/prof1.png" alt="Professeur">

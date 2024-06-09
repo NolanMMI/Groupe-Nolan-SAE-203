@@ -2,30 +2,26 @@
 include 'login3.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo = connexionDB();
-    $requete = 'INSERT INTO ressources (id_mod, nom_mod, id_prof) VALUES (:id_mod, :nom_mod,:id_prof)'; 
+    $requete = 'INSERT INTO ressources (id_mod, nom_mod, id_prof) VALUES (:id_mod, :nom_mod, :id_prof)'; 
     $stmt = $pdo->prepare($requete);
 
-    // Lier les paramètres
     $stmt->bindParam(':id_mod', $_POST['id_mod']);
     $stmt->bindParam(':nom_mod', $_POST['nom_mod']);
     $stmt->bindParam(':id_prof', $_POST['id_prof']);
 
-    
-// Après l'exécution de l'insertion
-try {
-    $stmt->execute();
-    // Rediriger vers la liste des candidats
-    header('Location: adminmodule.php');
-    exit;
-} catch (PDOException $e) {
-    echo 'Erreur d\'insertion : ' . $e->getMessage();
-}
+    try {
+        $stmt->execute();
+        header('Location: adminmodule.php');
+        exit;
+    } catch (PDOException $e) {
+        echo 'Erreur d\'insertion : ' . $e->getMessage();
+    }
 }
 ?>
 <?php
 $pdo = connexionDB();
-$stmt = $pdo->query('SELECT * FROM ressources'); //requete
-$candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associatif
+$stmt = $pdo->query('SELECT * FROM ressources'); 
+$candidats = $stmt->fetchAll();
 ?>
 
 <!DOCTYPE html>
@@ -34,64 +30,59 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin etudiant</title>
-    <link rel="stylesheet" href="Adminmodule.css">
+    <link rel="stylesheet" href="adminmodule.css">
     <script src="TD.js"></script>
 </head>
 <body>
 <nav class="navbar">
-         <a href="Fastnote.html"><img src="img/Fastnote.png"></a>
-            <div class="Tableaudebord">
-            <a href="Dashboard.php">Tableau de bord</a>
-            <a href="deconnexion.php">Deconnexion</a>
-        </div>
-    </nav>
-
+    <a href="index.php"><img src="img/Fastnote.png"></a>
+    <div class="Tableaudebord">
+        <a href="Dashboard.php">Tableau de bord</a>
+        <a href="deconnexion.php">Deconnexion</a>
     </div>
-    <div class="container">
-        <div class="Truc">
-            <div class="Truc1">
-                <p>
-                    Bonjour,<br>Vue d'ensemble des ressources .
-                </p>
-            </div>
+</nav>
 
-        </div>     
-        <div class="links">  
-        <a href="adminmodule.php">Module</a>
+<div class="container">
+    <div class="Truc">
+        <div class="Truc1">
+            <p>
+                Bonjour,<br>Vue d'ensemble des ressources.
+            </p>
+        </div>
+    </div>     
+    <div class="links">  
+        <a href="adminmodule.php">Ressources</a>
         <a href="adminprofesseur.php">Professeur</a>
         <a href="AdminEtudiant.php">Étudiant</a>
-        </div> 
-        <div class="Boutons">             
-            <button id="Ajout">Ajouter</button>     
-            <button id="Modifier" >Modifier</button>
-        </div>
-        <h2>Professeur MMI</h2>
-<table>
-
-<tr>
-    <th>ID</th>
-    <th> nom de la ressources</th>
-    <th>id professeur</th>
-
-</tr>
-                        <tr>
-                        <?php foreach ($candidats as $candidat): ?>
-            <tr>
-                <td><?= htmlspecialchars($candidat['id_mod']) ?></td>
-                <td><?= htmlspecialchars($candidat['nom_mod']) ?></td>
-                <td><?= htmlspecialchars($candidat['id_prof']) ?></td>
-                <td><button id="supp">Supprimer</button></td>
-                        </tr>
-                        <?php endforeach; ?>
-
-
-                </table>
-            </div>
+    </div> 
+    <div class="Boutons">             
+        <button id="Ajout">Ajouter</button>     
     </div>
-    <div class="form-container" id="formulaireetud" style="display: none;">
+    <h2>Professeur MMI</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>nom de la ressource</th>
+            <th>id professeur</th>
+            <th>Actions</th>
+        </tr>
+        <?php foreach ($candidats as $candidat): ?>
+        <tr>
+            <td><?= htmlspecialchars($candidat['id_mod']) ?></td>
+            <td><?= htmlspecialchars($candidat['nom_mod']) ?></td>
+            <td><?= htmlspecialchars($candidat['id_prof']) ?></td>
+            <td>
+               <a class="modifier-link" href="modifier_ressources.php?id=<?= $candidat['id_mod'] ?>">Modifier</a>
+                <a href="supprimer_ressources.php?id=<?= $candidat['id_prof'] ?>" id="supp" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce candidat ?');">Supprimer</a>
+            </td>
+        </tr> 
+        <?php endforeach; ?>
+    </table>
+</div>
+<div class="form-container" id="formulaireetud" style="display: none;">
     <form id="prof-form" method="post">
         <div class="form-group">
-            <label for="id_mod">ID </label>
+            <label for="id_mod">ID</label>
             <input type="text" id="id_mod" name="id_mod" required>
         </div>
         <div class="form-group">
@@ -104,14 +95,17 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
         </div>
         <div class="button-group">
             <button type="submit">Créer</button>
+            <button type="button" onclick="location.href='adminmodule.php';">Annuler</button>
         </div>
     </form>
+</div>
 
-    <script>
-        document.getElementById("Ajout").addEventListener("click", function() {
-            var formulaireAjout = document.getElementById("formulaireetud");
-            formulaireAjout.style.display = "block";
-        });
-    </script>
+<script>
+    document.getElementById("Ajout").addEventListener("click", function() {
+        var formulaireAjout = document.getElementById("formulaireetud");
+        formulaireAjout.style.display = "block";
+    });
+</script>
+
 </body>
 </html>

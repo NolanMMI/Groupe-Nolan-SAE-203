@@ -60,7 +60,7 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
 
         </div>     
         <div class="links">  
-        <a href="adminmodule.php">Module</a>
+        <a href="adminmodule.php">Ressources</a>
         <a href="adminprofesseur.php">Professeur</a>
         <a href="AdminEtudiant.php">Étudiant</a>
         </div> 
@@ -75,13 +75,13 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
                     <option value="TPF">TP F</option>
                 </select>
             </div>
-            <button id="Modifier" >Modifier</button>
             <button id="Ajout">Ajouter</button>   
+            <button id="Modifier"onclick="location.href='formulaireProf.php';" >Modifier</button>
+            
         </div>
 
             <div id="TPA" class="table-container">
-                <h1>Etudiant MMI</h1>
-                <h2>TPA</h2>
+                <h2>Etudiant MMI</h2>
                 <table>
                     <tr>
                         <th>ID</th>
@@ -91,6 +91,7 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
                         <th>TP</th>
                         <th>login</th>
                         <th>mot de passe</th>
+                        <th>Actions</th>
                     </tr>
                 <tr>
                         <?php foreach ($candidats as $candidat): ?>
@@ -102,7 +103,8 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
                 <td><?= htmlspecialchars($candidat['TP']) ?></td>
                 <td><?= htmlspecialchars($candidat['login_eleve']) ?></td>
                 <td><?= htmlspecialchars($candidat['motdepasse_eleve']) ?></td>
-                <td><button id="supp">Supprimer</button></td>
+                <td><a class="modifier-link" href="modifier_etudiant.php?id=<?= $candidat['id_eleve'] ?>">Modifier</a>
+                <a  href="supprimer_etudiant.php?id=<?= $candidat['id_eleve'] ?>" id="supp" onclick="return confirm('Êtes-vous sûr de vouloir supprimer ce candidat ?');">Supprimer</a></td>
                         </tr>
                         <?php endforeach; ?>
                 </table>
@@ -199,6 +201,7 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
         </div>
         <div class="button-group">
             <button type="submit">Créer</button>
+            <button onclick="location.href='adminEtudiant.php';">Annuler</button>
         </div>
     </form>
 
