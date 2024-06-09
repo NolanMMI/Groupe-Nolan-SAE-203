@@ -1,3 +1,29 @@
+<?php
+include 'login3.php';
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $pdo = connexionDB();
+    $requete = 'INSERT INTO prof (id_prof, nom_prof, prenom_prof, login_prof, motdepasse_prof) VALUES (:id_prof, :nom_prof, :prenom_prof, :login_prof, :motdepasse_prof)'; 
+    $stmt = $pdo->prepare($requete);
+    
+    // Lier les paramètres
+    $stmt->bindParam(':id_prof', $_POST['id_prof']);
+    $stmt->bindParam(':nom_prof', $_POST['nom_prof']);
+    $stmt->bindParam(':prenom_prof', $_POST['prenom_prof']);
+    $stmt->bindParam(':login_prof', $_POST['login_prof']);
+    $stmt->bindParam(':motdepasse_prof', $_POST['motdepasse_prof']);
+    
+    // Exécuter la requête
+    $stmt->execute();
+    
+    // Rediriger vers la liste des candidats
+    header('Location: adminprofesseur.php');
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,42 +36,32 @@
     <div class="header">
         <div class="logo"></div>
         <div class="menu">
-            <a href="#">Tableau de bord</a>
-            <a href="#">Déconnexion</a>
+            <a href="dashboard.php">Tableau de bord</a>
+            <a href="deconnexion.php">Déconnexion</a>
         </div>
     </div>
     <div class="Luffy">
         <div class="form-container">
-            <form id="prof-form">
-                <div class="form-group">
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" required>
+            <form id="prof-form" method="">
+            <div class="form-group">
+                    <label for="id_prof">Numéro</label>
+                    <input type="text" id="id_prof" name="id_prof" required>
                 </div>
                 <div class="form-group">
-                    <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom" required>
-                </div>
-                <div class="Module">
-                    <label for="module">Module</label>
-                    <input type="text" id="module" name="module">
-                    <button type="button" onclick="addModule()">+</button>
-                </div>
-                <div class="Matiere">
-                    <label for="matiere">Matière</label>
-                    <input type="text" id="matiere" name="matiere">
-                    <button type="button" onclick="addMatiere()">+</button>
+                    <label for="nom_prof">Nom</label>
+                    <input type="text" id="nom_prof" name="nom_prof" required>
                 </div>
                 <div class="form-group">
-                    <label for="annee">Années scolaire</label>
-                    <input type="date" id="annee" name="annee" required>
+                    <label for="prenom_prof">Prénom</label>
+                    <input type="text" id="prenom_prof" name="prenom_prof" required>
                 </div>
                 <div class="form-group">
-                    <label for="login">Login</label>
-                    <input type="text" id="login" name="login" required>
+                    <label for="login_prof">Login</label>
+                    <input type="text" id="login_prof" name="login_prof" required>
                 </div>
                 <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" required>
+                    <label for="motdepasse_prof">Mot de passe</label>
+                    <input type="password" id="motdepasse_prof" name="motdepasse_prof" required>
                 </div>
                 <div class="button-group">
                     <button type="submit">Créer</button>

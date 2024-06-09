@@ -39,18 +39,95 @@ img{
 .modules {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 20px;  
+
 }
 
 .module {
     background-color: white;
     height: 300px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .module1 {
-    background-color: #3F64BF;
-    margin: 50px 50px 20px;
+    background-color: black;
+    margin: 0px 50px 20px;
     height: 200px;
     border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('img/hebergement.jpg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module2 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('img/maths.jpg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module3 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('img/audiovisuel.jpeg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module4 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('img/marketing.jpg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module5 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('img/francais.jpg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module6 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('#');
+    background-position: cover;
+    background-repeat: none;
+}
+.module p{
+    color: black;
+    text-align: center;
+    font-size: 30px;
 }

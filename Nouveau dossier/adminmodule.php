@@ -2,21 +2,20 @@
 include 'login3.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pdo = connexionDB();
-    $requete = 'INSERT INTO prof (id_prof, nom_prof, prenom_prof, login_prof, motdepasse_prof) VALUES (:id_prof, :nom_prof, :prenom_prof, :login_prof, :motdepasse_prof)'; 
+    $requete = 'INSERT INTO ressources (id_mod, nom_mod, id_prof) VALUES (:id_mod, :nom_mod,:id_prof)'; 
     $stmt = $pdo->prepare($requete);
-    
+
     // Lier les paramètres
+    $stmt->bindParam(':id_mod', $_POST['id_mod']);
+    $stmt->bindParam(':nom_mod', $_POST['nom_mod']);
     $stmt->bindParam(':id_prof', $_POST['id_prof']);
-    $stmt->bindParam(':nom_prof', $_POST['nom_prof']);
-    $stmt->bindParam(':prenom_prof', $_POST['prenom_prof']);
-    $stmt->bindParam(':login_prof', $_POST['login_prof']);
-    $stmt->bindParam(':motdepasse_prof', $_POST['motdepasse_prof']);
+
     
 // Après l'exécution de l'insertion
 try {
     $stmt->execute();
     // Rediriger vers la liste des candidats
-    header('Location: adminprofesseur.php');
+    header('Location: adminmodule.php');
     exit;
 } catch (PDOException $e) {
     echo 'Erreur d\'insertion : ' . $e->getMessage();
@@ -25,12 +24,9 @@ try {
 ?>
 <?php
 $pdo = connexionDB();
-$stmt = $pdo->query('SELECT * FROM prof'); //requete
+$stmt = $pdo->query('SELECT * FROM ressources'); //requete
 $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associatif
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,7 +34,7 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin etudiant</title>
-    <link rel="stylesheet" href="Adminprofesseur.css">
+    <link rel="stylesheet" href="Adminmodule.css">
     <script src="TD.js"></script>
 </head>
 <body>
@@ -55,7 +51,7 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
         <div class="Truc">
             <div class="Truc1">
                 <p>
-                    Bonjour,<br>Vue d'ensemble.
+                    Bonjour,<br>Vue d'ensemble des ressources .
                 </p>
             </div>
 
@@ -69,25 +65,21 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
             <button id="Ajout">Ajouter</button>     
             <button id="Modifier" >Modifier</button>
         </div>
-        
-                <h2>Professeur MMI</h2>
+        <h2>Professeur MMI</h2>
 <table>
 
 <tr>
     <th>ID</th>
-    <th>nom</th>
-    <th>prenom</th>
-    <th>login</th>
-    <th>mot de passe</th>
+    <th> nom de la ressources</th>
+    <th>id professeur</th>
+
 </tr>
                         <tr>
                         <?php foreach ($candidats as $candidat): ?>
             <tr>
+                <td><?= htmlspecialchars($candidat['id_mod']) ?></td>
+                <td><?= htmlspecialchars($candidat['nom_mod']) ?></td>
                 <td><?= htmlspecialchars($candidat['id_prof']) ?></td>
-                <td><?= htmlspecialchars($candidat['nom_prof']) ?></td>
-                <td><?= htmlspecialchars($candidat['prenom_prof']) ?></td>
-                <td><?= htmlspecialchars($candidat['login_prof']) ?></td>
-                <td><?= htmlspecialchars($candidat['motdepasse_prof']) ?></td>
                 <td><button id="supp">Supprimer</button></td>
                         </tr>
                         <?php endforeach; ?>
@@ -96,36 +88,28 @@ $candidats = $stmt->fetchAll(); //récupérer le resultat dans un tableau associ
                 </table>
             </div>
     </div>
-    <div class="form-container" id="formulaireAjout" style="display: none;">
+    <div class="form-container" id="formulaireetud" style="display: none;">
     <form id="prof-form" method="post">
         <div class="form-group">
-            <label for="id_prof">Numéro</label>
+            <label for="id_mod">ID </label>
+            <input type="text" id="id_mod" name="id_mod" required>
+        </div>
+        <div class="form-group">
+            <label for="nom_mod">nom de ressources</label>
+            <input type="text" id="nom_mod" name="nom_mod" required>
+        </div>
+        <div class="form-group">
+            <label for="id_prof">id du prof</label>
             <input type="text" id="id_prof" name="id_prof" required>
-        </div>
-        <div class="form-group">
-            <label for="nom_prof">Nom</label>
-            <input type="text" id="nom_prof" name="nom_prof" required>
-        </div>
-        <div class="form-group">
-            <label for="prenom_prof">Prénom</label>
-            <input type="text" id="prenom_prof" name="prenom_prof" required>
-        </div>
-        <div class="form-group">
-            <label for="login_prof">Login</label>
-            <input type="text" id="login_prof" name="login_prof" required>
-        </div>
-        <div class="form-group">
-            <label for="motdepasse_prof">Mot de passe</label>
-            <input type="password" id="motdepasse_prof" name="motdepasse_prof" required>
         </div>
         <div class="button-group">
             <button type="submit">Créer</button>
         </div>
     </form>
-</div>
+
     <script>
         document.getElementById("Ajout").addEventListener("click", function() {
-            var formulaireAjout = document.getElementById("formulaireAjout");
+            var formulaireAjout = document.getElementById("formulaireetud");
             formulaireAjout.style.display = "block";
         });
     </script>

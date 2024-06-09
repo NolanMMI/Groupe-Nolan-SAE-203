@@ -18,7 +18,7 @@
             <p>Vue d'ensemble</p>
             <div class="module">
                 <img src="img/" alt="Module">
-                 <a href="Adminmodule.php"><div class="title">Module</div></a>
+                 <a href="adminmodule.php"><div class="title">Module</div></a>
             </div>
             <div class="module">
               <img src="img/prof1.png" alt="Professeur">
