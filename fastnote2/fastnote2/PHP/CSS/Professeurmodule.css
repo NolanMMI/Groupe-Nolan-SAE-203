@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F9F8ED;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #1c2c54;
+    margin-top: -10px;
+    right: 0.1px;
+}
+img{
+    width: 5%;
+}
+
+.Recherche {
+    padding: 10px;
+    width: 200px;
+    border-radius: 20px;
+    border: none;
+    float: right;
+}
+
+.container {
+    background-color: #343C5C;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.Bienvenue {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.modules {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;  
+
+}
+
+.module {
+    background-color: white;
+    height: 300px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.module1 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('CSS/img/hebergement.jpg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module2 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('img/maths.jpg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module3 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('img/audiovisuel.jpeg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module4 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('img/marketing.jpg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module5 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('img/francais.jpg');
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-size: 110%;
+}
+.module6 {
+    background-color: black;
+    margin: 0px 50px 20px;
+    height: 200px;
+    border-radius: 10px;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    background-image: url('#');
+    background-position: cover;
+    background-repeat: none;
+}
+.module p{
+    color: black;
+    text-align: center;
+    font-size: 30px;
+}
